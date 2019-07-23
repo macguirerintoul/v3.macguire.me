@@ -1,0 +1,18 @@
+@import './normalize.css';
+
+.featured-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 20rem;
+  .featured-block--name,
+  .featured-block--item-title,
+  .featured-block--see-all,
+  .featured-block--context {
+    flex: 1 0 50%;
+  }
+  .featured-block--see-all,
+  .featured-block--context {
+    text-align: right;
+  }
+}
