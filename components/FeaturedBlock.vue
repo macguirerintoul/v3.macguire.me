@@ -45,7 +45,7 @@ export default {
   methods: {
     computeContext(context) {
       if (context.type === 'starCount') {
-        return `⭐️${context.value}`
+        return `★${context.value}`
       } else if (context.type === 'timestamp') {
         return moment(context.value).fromNow()
       } else {

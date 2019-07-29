@@ -17,7 +17,9 @@
     "@sanity/client": "^0.141.6",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
-    "nuxt-sanity": "0.0.4"
+    "nuxt-sanity": "0.0.4",
+    "sanity-blocks-vue-component": "^0.1.0",
+    "vue-vimeo-player": "0.0.9"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

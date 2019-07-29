@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/sanity-blocks-vue-component',
+    '~/plugins/vue-vimeo-player',
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -40,6 +43,7 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
+    vendor: ['vue-vimeo-player'],
   },
   sanity: {
     projectId: 'hk4ya08c',

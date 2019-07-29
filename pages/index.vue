@@ -1,5 +1,14 @@
 <template>
   <div>
+    <section>
+      <div class="project-flex-container">
+        <ProjectBlock
+          v-for="project in projects"
+          :key="project._key"
+          :project="project"
+        />
+      </div>
+    </section>
     <FeaturedBlock block-name="Stars" v-bind="randomStar" />
     <FeaturedBlock block-name="Latest Commit" v-bind="latestCommit" />
     <FeaturedBlock block-name="Picks" v-bind="pick" />
@@ -8,10 +17,12 @@
 
 <script>
 import FeaturedBlock from '~/components/FeaturedBlock.vue'
+import ProjectBlock from '~/components/ProjectBlock.vue'
 
 export default {
   components: {
     FeaturedBlock,
+    ProjectBlock,
   },
   data() {
     return {
@@ -19,6 +30,12 @@ export default {
       latestCommit: null,
       pick: null,
     }
+  },
+  asyncData({ $sanity }) {
+    const query = '*[_type == "project"] | order(order) '
+    return $sanity.fetch(query).then(data => {
+      return { projects: data }
+    })
   },
   mounted() {
     this.getRandomStar()
