@@ -43,7 +43,6 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
-    vendor: ['vue-vimeo-player'],
   },
   sanity: {
     projectId: 'hk4ya08c',

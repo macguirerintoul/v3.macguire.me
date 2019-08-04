@@ -1,5 +1,32 @@
 <template>
   <div>
+    <style v-for="project in projects" :key="project._key">
+      .project-block.{{project.slug.current}} {
+        background: url({{project.image.asset.url}})
+                    no-repeat
+                    center center/cover;
+      }
+      .project-block.{{project.slug.current}}:before {
+        content: "";
+        position: absolute;
+        width: 95%;
+        height: 100%;
+        top: 2%;
+        left: calc(5% / 2);
+        transform: translateZ(-1px);
+        /* z-index: -1; /* Setting z-index to -1 could cause some issues. */ */
+        border-radius: 1rem;
+        background: url({{project.image.asset.url}})
+                    no-repeat
+                    center center/cover;
+        filter: blur(10px);
+        /* Again, images can be injected with some JS */
+      }
+    </style>
+    <section class="hero">
+      <block-content :blocks="content" :serializers="serializers" />
+    </section>
+    <h1>Work</h1>
     <section>
       <div class="project-flex-container">
         <ProjectBlock
@@ -29,13 +56,43 @@ export default {
       randomStar: null,
       latestCommit: null,
       pick: null,
+      serializers: {
+        marks: {
+          link: ({ mark, children }) => {
+            // Read https://css-tricks.com/use-target_blank/
+            const { blank, href } = mark
+            return blank ? (
+              <a class="hvr-float" href={href} target="_blank" rel="noopener">
+                {children}
+              </a>
+            ) : (
+              <a href={href}>{children}</a>
+            )
+          },
+        },
+      },
     }
   },
-  asyncData({ $sanity }) {
-    const query = '*[_type == "project"] | order(order) '
-    return $sanity.fetch(query).then(data => {
-      return { projects: data }
-    })
+  async asyncData({ $sanity }) {
+    let retrievedData = { projects: null, content: null }
+    retrievedData.projects = await $sanity
+      .fetch(
+        `*[_type == "project"] | order(order) {
+        title, shortDescription, for, slug, image {
+          asset->
+        }
+      }`
+      )
+      .then(data => {
+        return data
+      })
+    retrievedData.content = await $sanity
+      .fetch('*[_type == "index"][0]')
+      .then(data => {
+        return data.text
+      })
+    console.log(retrievedData)
+    return retrievedData
   },
   mounted() {
     this.getRandomStar()

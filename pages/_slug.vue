@@ -1,6 +1,8 @@
 <template>
   <section class="content">
     <h1>{{ project.title }}</h1>
+    <h3>For</h3>
+    <h3>{{ project.for }}</h3>
     <p>{{ project.description }}</p>
     <block-content :blocks="project.content" :serializers="serializers" />
   </section>
@@ -12,7 +14,7 @@ import Showcase from '~/components/Showcase'
 
 export default {
   // eslint-disable-next-line
-  components: { VideoEmbed, Showcase, ProjectContext },
+  components: { VideoEmbed, Showcase },
   data() {
     return {
       serializers: {

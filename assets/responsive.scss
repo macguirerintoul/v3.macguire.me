@@ -1,0 +1,60 @@
+$responsive-padding: 0 1em;
+$mobile-breakpoint: 850px;
+
+@media all and (max-width: $mobile-breakpoint) {
+  .navbar {
+    background: white;
+    border-top: 1px solid black;
+    top: auto;
+    bottom: 0;
+    .navbar-brand {
+      width: 100%;
+    }
+    .navbar-end {
+      display: block;
+    }
+  }
+  .navbar.is-active {
+    .navbar-end,
+    .navbar-menu,
+    .navbar-start {
+      -webkit-box-align: stretch;
+      align-items: stretch;
+      display: -webkit-box;
+      display: block;
+    }
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: inherit;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  p {
+    font-size: 1.5em;
+  }
+  #container,
+  .navbar {
+    padding: $responsive-padding;
+  }
+  #container {
+    padding-top: 1em;
+    transition: all 0.3s;
+  }
+  #index-showcase {
+    flex-direction: column;
+    & > div {
+      width: 100%;
+    }
+    & > div:first-of-type {
+      padding-top: 0;
+    }
+    #demo {
+      display: none;
+    }
+  }
+}

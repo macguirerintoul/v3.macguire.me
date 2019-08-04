@@ -1,8 +1,13 @@
 <template>
-  <nuxt-link :to="project.slug.current">
-    <div class="project-block">
-      <h2 class="project-block--title">{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
+  <nuxt-link
+    :class="['project-block', project.slug.current]"
+    :to="project.slug.current"
+  >
+    <!-- <img :src="project.image.asset.url + '?h=500'" :alt="project.image.alt" /> -->
+    <div class="project-block--content">
+      <small>{{ project.for }}</small>
+      <h3 class="project-block--title">{{ project.title }}</h3>
+      <p>{{ project.shortDescription }}</p>
     </div>
   </nuxt-link>
 </template>
