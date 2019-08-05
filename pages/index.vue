@@ -2,12 +2,12 @@
   <div>
     <style v-for="project in projects" :key="project._key">
       .project-block.{{project.slug.current}} {
-        background: url({{project.image.asset.url}})
+        background: url(https://res.cloudinary.com/macguire/image/upload/c_scale,w_800,dpr_auto,f_auto,q_auto:eco/{{project.featuredImage}})
                     no-repeat
                     center center/cover;
       }
       .project-block.{{project.slug.current}}:before {
-        background: url({{project.image.asset.url}})
+        background: url(https://res.cloudinary.com/macguire/image/upload/c_scale,w_800,dpr_auto,f_auto,q_auto:eco/{{project.featuredImage}})
                     no-repeat
                     center center/cover;
       }
@@ -67,9 +67,7 @@ export default {
     retrievedData.projects = await $sanity
       .fetch(
         `*[_type == "project"] | order(order) {
-        title, shortDescription, for, slug, image {
-          asset->
-        }
+        title, shortDescription, for, slug, featuredImage
       }`
       )
       .then(data => {

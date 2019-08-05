@@ -83,9 +83,13 @@ video {
   h1,
   h2,
   h3,
+  h4,
+  h5,
+  h6,
   .video-embed,
   .showcase,
-  img {
+  img,
+  .project-context {
     margin-left: auto;
     margin-right: auto;
     max-width: $content-width;
@@ -111,6 +115,15 @@ video {
 small {
   display: block;
   font-size: 1rem;
+}
+
+.project-context {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  div {
+    flex: 1 0 auto;
+  }
 }
 
 .project-flex-container {
