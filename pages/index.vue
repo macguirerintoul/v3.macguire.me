@@ -7,20 +7,9 @@
                     center center/cover;
       }
       .project-block.{{project.slug.current}}:before {
-        content: "";
-        position: absolute;
-        width: 95%;
-        height: 100%;
-        top: 2%;
-        left: calc(5% / 2);
-        transform: translateZ(-1px);
-        /* z-index: -1; /* Setting z-index to -1 could cause some issues. */ */
-        border-radius: 1rem;
         background: url({{project.image.asset.url}})
                     no-repeat
                     center center/cover;
-        filter: blur(10px);
-        /* Again, images can be injected with some JS */
       }
     </style>
     <section class="hero">

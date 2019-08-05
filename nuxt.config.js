@@ -30,7 +30,14 @@ export default {
   plugins: [
     '~/plugins/sanity-blocks-vue-component',
     '~/plugins/vue-vimeo-player',
+    '~/plugins/vue-cloudinary',
   ],
+  /*
+   ** Middleware
+   */
+  router: {
+    middleware: 'zooming',
+  },
   /*
    ** Nuxt.js modules
    */

@@ -1,15 +1,22 @@
 <template>
-  <div class="showcase">
+  <div :class="['showcase', orientation]">
     <div v-if="type === 'image'">
-      <img :src="url" />
+      <CldImage dpr="auto" responsive width="auto" :public-id="cloudinaryID" />
     </div>
     <div v-if="type === 'video'">
-      <video autoplay muted loop :src="url" />
+      <CldVideo muted loop="true" autoplay="autoplay" :public-id="cloudinaryID">
+        <CldTransformation quality="auto:eco" fetch-format="auto" />
+      </CldVideo>
+    </div>
+    <div>
+      {{ caption }}
     </div>
   </div>
 </template>
 
 <script>
+import { CldImage, CldVideo, CldTransformation } from 'cloudinary-vue'
+
 export default {
   props: {
     caption: {
@@ -20,7 +27,7 @@ export default {
       type: String,
       default: '',
     },
-    url: {
+    cloudinaryID: {
       type: String,
       default: '',
     },

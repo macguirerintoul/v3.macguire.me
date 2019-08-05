@@ -11,16 +11,20 @@
 <script>
 import VideoEmbed from '~/components/VideoEmbed'
 import Showcase from '~/components/Showcase'
+import CloudinaryImage from '~/components/CloudinaryImage'
+import Blockquote from '~/components/Blockquote'
 
 export default {
   // eslint-disable-next-line
-  components: { VideoEmbed, Showcase },
+  components: { CloudinaryImage, VideoEmbed, Showcase },
   data() {
     return {
       serializers: {
         types: {
           videoEmbed: VideoEmbed,
           showcase: Showcase,
+          cloudinaryImage: CloudinaryImage,
+          blockquote: Blockquote,
         },
       },
     }
@@ -31,9 +35,9 @@ export default {
       ...,
       content[]{
         ...,
-        _type == "showcase" => {
-          "url": content.asset->url
-        }
+        // _type == "showcase" => {
+        //   "url": content.asset->url
+        // }
       }
     }`
     console.log(query)
