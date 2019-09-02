@@ -17,6 +17,11 @@ body {
   font-size: 1.5rem;
 }
 
+footer {
+  background-color: $color-dark;
+  color: $color-light;
+}
+
 th {
   text-align: left;
 }
@@ -130,8 +135,7 @@ video {
 }
 
 small {
-  display: block;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
 .project-context {
@@ -207,19 +211,37 @@ small {
 }
 
 .featured-block {
+  a {
+    color: $color-light;
+  }
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   max-width: 20rem;
+  .featured-block--name {
+    margin-bottom: 0.25rem;
+  }
+  .featured-block--item-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
   .featured-block--name,
   .featured-block--item-title,
   .featured-block--see-all,
   .featured-block--context {
-    flex: 1 0 50%;
+    flex: 1 0 40%;
+  }
+  .featured-block--see-all {
+    text-transform: uppercase;
   }
   .featured-block--see-all,
   .featured-block--context {
     text-align: right;
+  }
+  .featured-block--text {
+    font-size: $font-size-3;
+    line-height: 1.25rem;
   }
 }
 

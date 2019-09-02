@@ -1,18 +1,19 @@
 <template>
   <div class="featured-block">
-    <h4 class="featured-block--name">{{ blockName }}</h4>
+    <span class="featured-block--name">{{ blockName }}</span>
     <nuxt-link :to="seeAll" class="featured-block--see-all">
       <small>See all</small>
     </nuxt-link>
 
     <a :href="url" target="_blank" class="featured-block--item-title">
-      <h5>{{ itemTitle }}</h5>
+      {{ itemTitle }}
     </a>
     <small class="featured-block--context">
       {{ computeContext(contextOne) }}
     </small>
 
-    <p>{{ text }}</p>
+    <p class="featured-block--text">{{ text }}</p>
+
     <small class="featured-block--context">
       {{ computeContext(contextTwo) }}
     </small>
@@ -53,9 +54,11 @@ export default {
       // Choose a Pick at random from the array
       const pick = picks[Math.floor(Math.random() * picks.length)]
       // Store the Pick in state
+      this.blockName = 'Picks'
       this.itemTitle = pick.title
       this.text = pick.description
       this.url = pick.url
+      this.seeAll = '/picks'
       this.contextOne = { type: 'timestamp', value: pick._createdAt }
     },
     getLastCommit() {
@@ -67,6 +70,7 @@ export default {
           })
           const latestPush = pushEvents[0]
           const latestCommit = latestPush.payload.commits[0]
+          this.blockName = 'Last commit'
           this.contextOne = {
             type: 'hash',
             value: latestCommit.sha.substr(0, 6),
@@ -84,6 +88,7 @@ export default {
         .then(data => {
           const chosenStar = data[Math.floor(Math.random() * data.length)]
           this.blockName = 'Stars'
+          this.seeAll = 'https://github.com/mrintoul?tab=stars'
           this.itemTitle = chosenStar.full_name
           this.contextOne = {
             type: 'starCount',
