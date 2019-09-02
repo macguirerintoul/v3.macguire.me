@@ -3,6 +3,7 @@
 @import './_nav.scss';
 @import './_type.scss';
 @import './_hover.scss';
+@import './_animate.scss';
 // Responsive styles are imported at the bottom
 
 * {
@@ -43,6 +44,18 @@ blockquote {
 a {
   text-decoration: none;
   color: #000;
+  // Insert an SVG icon after external links
+  // &[target='_blank']:after {
+  //   display: inline-block;
+  //   margin-left: 0.25rem;
+  //   bottom: 0.5rem;
+  //   content: ' ';
+  //   // background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.824 288.824"><path d="M3.501 285.323c4.668 4.668 12.235 4.668 16.891 0L264.763 40.951v91.382c0 6.641 5.39 12.03 12.03 12.03 6.641 0 12.03-5.39 12.03-12.03V12.03c0-3.188-1.239-6.268-3.501-8.529S279.981 0 276.793 0H156.49c-6.641 0-12.03 5.39-12.03 12.03s5.39 12.03 12.03 12.03h91.382L3.501 268.432c-4.668 4.668-4.668 12.235 0 16.891z"/></svg>');
+  //   background-size: cover;
+  //   position: relative;
+  //   width: 12pt;
+  //   height: 12pt;
+  // }
 }
 
 blockquote {

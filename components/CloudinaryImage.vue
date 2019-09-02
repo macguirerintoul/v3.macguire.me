@@ -1,6 +1,7 @@
 <template>
   <CldImage
     class="img-zooming"
+    lazy
     dpr="auto"
     width="auto"
     crop="scale"

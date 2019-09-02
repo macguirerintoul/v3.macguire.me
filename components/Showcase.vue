@@ -1,10 +1,16 @@
 <template>
   <div :class="['showcase', orientation]">
     <div v-if="type === 'image'">
-      <CldImage dpr="auto" responsive width="auto" :public-id="cloudinaryID" />
+      <CldImage dpr="auto" width="auto" lazy :public-id="cloudinaryID" />
     </div>
     <div v-if="type === 'video'">
-      <CldVideo muted loop="true" autoplay="autoplay" :public-id="cloudinaryID">
+      <CldVideo
+        muted
+        loop="true"
+        autoplay="autoplay"
+        lazy
+        :public-id="cloudinaryID"
+      >
         <CldTransformation quality="auto:eco" fetch-format="auto" />
       </CldVideo>
     </div>

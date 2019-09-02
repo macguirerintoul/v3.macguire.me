@@ -29,20 +29,27 @@
             Home
           </nuxt-link>
 
+          <nuxt-link to="/articles" class="navbar-item hvr-underline-reveal">
+            Articles
+          </nuxt-link>
+
           <nuxt-link to="/about" class="navbar-item hvr-underline-reveal">
             About
           </nuxt-link>
 
-          <nuxt-link
-            to="https://www.linkedin.com/in/mrintoul/"
+          <a
+            href="https://www.linkedin.com/in/mrintoul/"
+            target="_blank"
+            rel="noopener"
             class="navbar-item hvr-underline-reveal"
           >
             LinkedIn
-          </nuxt-link>
+          </a>
 
           <a
             href="https://github.com/mrintoul/"
             target="_blank"
+            rel="noopener"
             class="navbar-item hvr-underline-reveal"
           >
             GitHub

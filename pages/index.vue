@@ -15,8 +15,8 @@
     <section class="hero">
       <block-content :blocks="content" :serializers="serializers" />
     </section>
-    <h1>Work</h1>
-    <section>
+    <section class="work animate-fade-in-up">
+      <h1>Work</h1>
       <div class="project-flex-container">
         <ProjectBlock
           v-for="project in projects"
@@ -48,7 +48,6 @@ export default {
       serializers: {
         marks: {
           link: ({ mark, children }) => {
-            // Read https://css-tricks.com/use-target_blank/
             const { blank, href } = mark
             return blank ? (
               <a class="hvr-float" href={href} target="_blank" rel="noopener">
