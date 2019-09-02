@@ -16,17 +16,16 @@
     </thead>
     <tbody>
       <!-- eslint-disable-next-line -->
-      <slot v-for="record in records" name="record" :url="record.url" :title="record.title" :date="record._updatedAt" :description="record.description"></slot>
+      <slot v-bind:record="record" v-for="record in filteredRecords" name="record" :url="record.url" :title="record.title" :date="record.date" :description="record.description"></slot>
     </tbody>
   </table>
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
   filters: {
     capitalize: function(str) {
+      // Automatically capitalize the column name
       return str.charAt(0).toUpperCase() + str.slice(1)
     },
   },
@@ -55,7 +54,7 @@ export default {
     },
     filterKey: { type: String, default: '' },
   },
-  data: function() {
+  data() {
     var sortOrders = {}
     this.columns.forEach(function(key) {
       sortOrders[key] = 1
@@ -66,7 +65,7 @@ export default {
     }
   },
   computed: {
-    filteredrecords: function() {
+    filteredRecords: function() {
       var sortKey = this.sortKey
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
       var order = this.sortOrders[sortKey] || 1
@@ -92,18 +91,16 @@ export default {
       return records
     },
   },
-  created() {
-    // we register the item-template component here
-    // without having to declare it in the components() section
-    this.$options.components.recordTemplate = {
-      props: ['record'],
-      template: this.recordTemplateString,
-    }
-  },
   methods: {
     sortBy: function(key) {
+      console.log('Sorting data table')
+      console.log(key)
+      console.log(this.sortKey)
+      console.log(this.sortOrders[key])
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
+      console.log(this.sortKey)
+      console.log(this.sortOrders[key])
     },
   },
 }
