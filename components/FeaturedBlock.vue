@@ -1,9 +1,9 @@
 <template>
   <div class="featured-block">
     <span class="featured-block--name">{{ blockName }}</span>
-    <nuxt-link :to="seeAll" class="featured-block--see-all">
+    <MagicLink class="featured-block--see-all" :url="seeAll">
       <small>See all</small>
-    </nuxt-link>
+    </MagicLink>
 
     <a :href="url" target="_blank" class="featured-block--item-title">
       {{ itemTitle }}
@@ -22,8 +22,12 @@
 
 <script>
 import moment from 'moment'
+import MagicLink from '~/components/MagicLink.vue'
 
 export default {
+  components: {
+    MagicLink,
+  },
   props: {
     type: { type: String, default: '' },
   },
@@ -73,8 +77,10 @@ export default {
           this.blockName = 'Last commit'
           this.contextOne = {
             type: 'hash',
+            url: `https://github.com/${latestPush.repo.name}/commit/${latestCommit.sha}`,
             value: latestCommit.sha.substr(0, 6),
           }
+          this.seeAll = 'https://gitstalk.netlify.com/mrintoul'
           this.contextTwo = { type: 'timestamp', value: latestPush.created_at }
           this.text = latestCommit.message
           this.itemTitle = latestPush.repo.name

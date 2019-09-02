@@ -20,6 +20,12 @@ body {
 footer {
   background-color: $color-dark;
   color: $color-light;
+  padding-top: 2rem;
+}
+
+.footer-content {
+  max-width: $header-width;
+  margin: auto;
 }
 
 th {
@@ -209,7 +215,11 @@ small {
     }
   }
 }
-
+.featured-block-container {
+  display: flex;
+  flex: 1 0 45%;
+  justify-content: space-between;
+}
 .featured-block {
   a {
     color: $color-light;
