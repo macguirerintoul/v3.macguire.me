@@ -1,7 +1,7 @@
 @import './_variables.scss';
 @import './_normalize.scss';
 @import './_nav.scss';
-@import './_type.scss';
+@import './_Benton Sans.scss';
 @import './_hover.scss';
 @import './_animate.scss';
 // Responsive styles are imported at the bottom
@@ -13,8 +13,12 @@
 body {
   margin-top: 10rem;
   background-color: rgb(252, 253, 254);
-  font-family: 'Benton Sans', -apple-system, system-ui, BlinkMacSystemFont;
+  font-family: $font-stack;
   font-size: 1.5rem;
+}
+
+th {
+  text-align: left;
 }
 
 h1 {
@@ -145,7 +149,7 @@ small {
   justify-content: space-between;
   .project-block,
   .project-block--content {
-    border-radius: 0.75rem;
+    // border-radius: 0.75rem;
   }
   .project-block {
     position: relative;
