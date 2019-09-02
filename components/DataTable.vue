@@ -4,11 +4,11 @@
       <tr>
         <th
           v-for="column in columns"
-          :key="column.title"
+          :key="column"
           :class="{ active: sortKey == column }"
           @click="sortBy(column)"
         >
-          {{ column.title | capitalize }}
+          {{ column | capitalize }}
           <span class="arrow" :class="sortOrders[column] > 0 ? 'asc' : 'dsc'">
           </span>
         </th>
@@ -31,11 +31,6 @@ export default {
     },
   },
   props: {
-    recordTemplateString: {
-      // The template to be rendered for each record
-      type: String,
-      default: '',
-    },
     records: {
       // An array of records (i.e. the rows to be displayed in the table)
       type: Array,
