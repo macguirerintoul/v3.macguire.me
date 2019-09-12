@@ -23,6 +23,14 @@ footer {
   padding-top: 2rem;
 }
 
+.button--primary {
+  color: $color-light;
+  padding: 0.5rem;
+  border-radius: $border-radius;
+  background-color: $color-blue;
+  background-image: $color-blue-gradient;
+}
+
 .footer-content {
   max-width: $header-width;
   margin: auto;

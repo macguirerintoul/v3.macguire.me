@@ -12,7 +12,8 @@
         type="email"
         placeholder="Email"
       />
-      <button @click="addSubsriber">Subscribe</button>
+      <button class="button--primary" @click="addSubsriber">Subscribe</button>
+      <span v-text="subscriptionStatus"></span>
       <div class="featured-block-container">
         <FeaturedBlock type="randomStar" />
         <FeaturedBlock type="lastCommit" />
@@ -32,17 +33,35 @@ export default {
   data() {
     return {
       email: '',
+      subscriptionStatus: '',
     }
   },
   methods: {
+    updateSubscriptionStatus(data) {
+      if (!data.error) {
+        this.subscriptionStatus = 'Successfully subscribed!'
+      } else {
+        this.subscriptionStatus = data.error
+      }
+    },
     addSubsriber() {
       console.log('Attempting to add subscriber...')
-      fetch('https://api.macguire.now.sh/api/add-subscriber', {
-        method: 'post',
-        body: `{email: ${this.email}}`,
-      }).then(response => {
-        console.log(response)
-      })
+      try {
+        fetch('https://api.macguire.me/api/add-subscriber', {
+          method: 'post',
+          body: JSON.stringify({ email: this.email }),
+        })
+          .then(response => {
+            return response.json()
+          })
+          .then(data => {
+            console.log('Subscription attempt finished', data)
+            this.updateSubscriptionStatus(data)
+          })
+      } catch (error) {
+        console.error(error)
+        this.subscriptionStatus == error
+      }
     },
   },
 }

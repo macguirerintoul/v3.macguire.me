@@ -4,10 +4,11 @@ $container-width: 1200px;
 $content-width: 50rem;
 $border-radius: 0.5rem;
 $shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
-$font-stack: Helvetica, 'Benton Sans', -apple-system, system-ui,
-  BlinkMacSystemFont;
+$font-stack: -apple-system, system-ui, BlinkMacSystemFont;
 
 $color-dark: #000;
 $color-light: #fff;
+$color-blue: rgb(6, 132, 248);
+$color-blue-gradient: linear-gradient(rgb(6, 132, 248), rgb(6, 122, 228));
 
 $font-size-3: 1rem;

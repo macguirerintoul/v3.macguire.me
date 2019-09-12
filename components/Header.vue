@@ -8,7 +8,7 @@
     >
       <div class="navbar-brand">
         <nuxt-link class="navbar-item" to="/">
-          <span id="logo-text">Macguire.me</span>
+          <span class="header-name">Macguire Rintoul</span>
         </nuxt-link>
 
         <a
@@ -56,7 +56,7 @@
           </a>
 
           <nuxt-link to="/contact" class="navbar-item">
-            <button>Contact</button>
+            <button class="button--primary">Contact</button>
           </nuxt-link>
         </div>
       </div>
