@@ -2,8 +2,8 @@
   <footer>
     <div class="footer-content">
       <h2>Macguire Rintoul</h2>
-      <p>Experience designer & developer</p>
-      <h3>Like email?</h3>
+      <p>Product design + web development consultant</p>
+      <h3>Care for a quarterly email?</h3>
       <label class="footer-subscribe-label" for="subscribe-input">Email</label>
       <input
         id="subscribe-input"

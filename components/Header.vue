@@ -28,43 +28,17 @@
           <nuxt-link to="/" class="navbar-item hvr-underline-reveal">
             Home
           </nuxt-link>
-
-          <nuxt-link to="/articles" class="navbar-item hvr-underline-reveal">
-            Articles
-          </nuxt-link>
-
           <nuxt-link to="/about" class="navbar-item hvr-underline-reveal">
             About
           </nuxt-link>
-
-          <a
-            href="https://www.linkedin.com/in/mrintoul/"
-            target="_blank"
-            rel="noopener"
-            class="navbar-item hvr-underline-reveal"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://github.com/mrintoul/"
-            target="_blank"
-            rel="noopener"
-            class="navbar-item hvr-underline-reveal"
-          >
-            GitHub
-          </a>
-
+          <nuxt-link to="/articles" class="navbar-item hvr-underline-reveal">
+            Articles
+          </nuxt-link>
           <nuxt-link to="/contact" class="navbar-item">
             <button class="button--primary">Contact</button>
           </nuxt-link>
         </div>
       </div>
-      <!-- link to bulma cdn for debugging -->
-      <!-- <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
-      /> -->
     </nav>
   </header>
 </template>
