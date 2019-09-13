@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :class="['project-block', project.slug.current]"
-    :to="project.slug.current"
+    :to="'/project/' + project.slug.current"
   >
     <div class="project-block--content">
       <small>{{ project.for }}</small>

@@ -73,7 +73,7 @@ export default {
         return data
       })
     retrievedData.content = await $sanity
-      .fetch('*[_type == "index"][0]')
+      .fetch('*[_type == "page" && title == "Index"][0]')
       .then(data => {
         return data.text
       })

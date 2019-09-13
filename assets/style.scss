@@ -150,7 +150,7 @@ video {
 }
 
 small {
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .project-context {
@@ -178,7 +178,10 @@ small {
     line-height: normal;
     width: 48%;
     height: 400px;
+    margin-bottom: 3rem;
+    border-radius: $border-radius;
     transform-style: preserve-3d;
+    transition: transform 100ms ease;
     color: #fff;
     &:before {
       content: '';
@@ -193,6 +196,7 @@ small {
     }
     .project-block--content {
       position: absolute;
+      border-radius: $border-radius;
       top: 0;
       height: 100%;
       padding: 3rem 3rem;
@@ -200,9 +204,9 @@ small {
       background-color: rgba(0, 0, 0, 0.6);
       opacity: 0;
       transition: opacity 200ms ease;
+
       h3 {
-        margin: 0;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
       }
       p {
         width: 80%;
@@ -210,14 +214,16 @@ small {
         top: 1rem;
         font-size: 14pt;
         line-height: 16pt;
+        margin-bottom: 1rem;
       }
       small {
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
       }
     }
   }
   .project-block:hover,
   .project-block:focus {
+    transform: translateY(-0.2rem);
     img {
       filter: blur(1px);
       transform: scale(1.005);
@@ -227,11 +233,13 @@ small {
     }
   }
 }
+
 .featured-block-container {
   display: flex;
   flex: 1 0 45%;
   justify-content: space-between;
 }
+
 .featured-block {
   a {
     color: $color-light;
