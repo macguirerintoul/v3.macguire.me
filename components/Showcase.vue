@@ -15,7 +15,7 @@
       </CldVideo>
     </div>
     <div>
-      {{ caption }}
+      <block-content :blocks="content" />
     </div>
   </div>
 </template>
@@ -25,9 +25,11 @@ import { CldImage, CldVideo, CldTransformation } from 'cloudinary-vue'
 
 export default {
   props: {
-    caption: {
-      type: String,
-      default: '',
+    content: {
+      type: Array,
+      default: () => {
+        return []
+      },
     },
     orientation: {
       type: String,

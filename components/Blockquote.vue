@@ -1,7 +1,7 @@
 <template>
   <blockquote>
-    {{ quote }}
-    <cite>
+    <span>{{ quote }}</span>
+    <cite v-if="source.length > 0">
       — <a :href="url" target="_blank">{{ source }}</a>
     </cite>
   </blockquote>

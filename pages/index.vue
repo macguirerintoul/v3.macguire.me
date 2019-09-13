@@ -16,7 +16,7 @@
       <block-content :blocks="content" :serializers="serializers" />
     </section>
     <section class="work animate-fade-in-up">
-      <h1>Work</h1>
+      <h1>Featured Work</h1>
       <div class="project-flex-container">
         <ProjectBlock
           v-for="project in projects"
