@@ -66,7 +66,7 @@ export default {
     retrievedData.projects = await $sanity
       .fetch(
         `*[_type == "project"] | order(order) {
-        title, shortDescription, for, slug, featuredImage
+        title, shortDescription, for, slug, featuredImage, tags
       }`
       )
       .then(data => {

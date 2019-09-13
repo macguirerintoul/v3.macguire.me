@@ -170,6 +170,9 @@ small {
   .project-block--content {
     // border-radius: 0.75rem;
   }
+  .project-block__tag:not(:last-child)::after {
+    content: ', ';
+  }
   .project-block {
     position: relative;
     line-height: normal;
