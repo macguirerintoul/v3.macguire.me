@@ -11,16 +11,14 @@
           <span class="header-name">Macguire Rintoul</span>
         </nuxt-link>
 
-        <a
-          role="button"
-          class="mobile-menu"
+        <button
+          class="mobile-menu button--secondary"
           aria-label="menu"
           aria-expanded="false"
-          data-target="navbarBasicExample"
           @click="toggleMobileMenu"
         >
           <span>Menu</span>
-        </a>
+        </button>
       </div>
 
       <div class="navbar-menu" @click="closeMobileMenu">
