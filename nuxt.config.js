@@ -7,7 +7,10 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'viewport',
+        content: 'initial-scale=1.0, width=device-width',
+      },
       {
         hid: 'description',
         name: 'description',

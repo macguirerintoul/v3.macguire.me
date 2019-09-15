@@ -25,26 +25,18 @@
         />
       </div>
     </section>
-    <FeaturedBlock block-name="Stars" v-bind="randomStar" />
-    <FeaturedBlock block-name="Latest Commit" v-bind="latestCommit" />
-    <FeaturedBlock block-name="Picks" v-bind="pick" />
   </div>
 </template>
 
 <script>
-import FeaturedBlock from '~/components/FeaturedBlock.vue'
 import ProjectBlock from '~/components/ProjectBlock.vue'
 
 export default {
   components: {
-    FeaturedBlock,
     ProjectBlock,
   },
   data() {
     return {
-      randomStar: null,
-      latestCommit: null,
-      pick: null,
       serializers: {
         marks: {
           link: ({ mark, children }) => {
