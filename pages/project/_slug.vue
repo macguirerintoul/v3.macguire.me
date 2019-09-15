@@ -1,9 +1,7 @@
 <template>
-  <div>
+  <div class="content">
     <ProjectOverview :project="project" />
-    <main class="content">
-      <block-content :blocks="project.content" :serializers="serializers" />
-    </main>
+    <block-content :blocks="project.content" :serializers="serializers" />
   </div>
 </template>
 
