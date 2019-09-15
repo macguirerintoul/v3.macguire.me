@@ -39,7 +39,7 @@ $mobile-breakpoint: 850px;
   }
   #container,
   .navbar {
-    padding: $responsive-padding;
+    // padding: $responsive-padding;
   }
   #container {
     padding-top: 1em;
@@ -60,5 +60,15 @@ $mobile-breakpoint: 850px;
 
   .featured-block-container {
     flex-direction: column;
+  }
+
+  .project-flex-container {
+    flex-direction: column;
+    .project-block {
+      width: 100%;
+      .project-block--content {
+        padding: 1rem;
+      }
+    }
   }
 }

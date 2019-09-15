@@ -296,4 +296,10 @@ small {
   }
 }
 
+// CSS debugging
+* {
+  outline: 1px red solid !important;
+  visibility: visible !important;
+}
+
 @import './_responsive.scss';
