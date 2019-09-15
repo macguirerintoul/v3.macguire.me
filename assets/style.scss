@@ -94,6 +94,7 @@ cite {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 img,
@@ -128,7 +129,6 @@ video {
   .project-context {
     margin-left: auto;
     margin-right: auto;
-    max-width: $content-width;
   }
   iframe {
     position: absolute;
