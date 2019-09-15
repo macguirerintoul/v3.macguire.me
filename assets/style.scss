@@ -152,6 +152,26 @@ small {
   font-size: 1rem;
 }
 
+.project-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3);
+  grid-auto-rows: min-content;
+  .project-overview__summary {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .project-overview__context {
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+  .project-overview__image {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+}
+
 .project-context {
   display: flex;
   width: 100%;
@@ -297,9 +317,9 @@ small {
 }
 
 // CSS debugging
-* {
-  outline: 1px red solid !important;
-  visibility: visible !important;
-}
+// * {
+//   outline: 1px red solid !important;
+//   visibility: visible !important;
+// }
 
 @import './_responsive.scss';
