@@ -1,14 +1,12 @@
-header {
+.navbar {
   position: fixed;
-  min-height: 3.25rem;
-  z-index: 30;
   top: 0;
   left: 0;
   right: 0;
-  background-color: $header-background;
-}
+  z-index: 30;
+  min-height: 3.25rem;
 
-.navbar {
+  background-color: $header-background;
   max-width: $header-width;
   margin: auto;
   padding-top: 0.5em;
