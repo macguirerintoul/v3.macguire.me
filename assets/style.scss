@@ -305,8 +305,11 @@ small {
   justify-content: space-between;
   flex-direction: column;
   margin: 4rem 0;
-  &.horizontal > div {
+  div {
     max-width: 48%;
+  }
+  &.vertical div {
+    max-width: 100%;
   }
   video,
   img {

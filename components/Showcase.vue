@@ -1,7 +1,7 @@
 <template>
   <div :class="['showcase', orientation]">
     <div v-if="type === 'image'">
-      <CldImage dpr="auto" width="auto" lazy :public-id="cloudinaryID" />
+      <CloudinaryImage :cloudinary-i-d="cloudinaryID" />
     </div>
     <div v-if="type === 'video'">
       <CldVideo
@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import { CldImage, CldVideo, CldTransformation } from 'cloudinary-vue'
+import { CldVideo, CldTransformation } from 'cloudinary-vue'
+import CloudinaryImage from '~/components/CloudinaryImage'
 
 export default {
   props: {
