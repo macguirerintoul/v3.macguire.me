@@ -1,9 +1,18 @@
 @media all and (max-width: $mobile-breakpoint) {
+  body {
+    margin-top: 4rem;
+  }
+  footer {
+    padding-left: $responsive-padding;
+    padding-right: $responsive-padding;
+  }
   .navbar {
     background: white;
     border-top: 1px solid black;
     top: auto;
     bottom: 0;
+    padding-left: $responsive-padding;
+    padding-right: $responsive-padding;
     .navbar-brand {
       width: 100%;
     }
@@ -34,13 +43,9 @@
   p {
     font-size: 1.5em;
   }
-  #container,
-  .navbar {
-    // padding: $responsive-padding;
-  }
-  #container {
-    padding-top: 1em;
-    transition: all 0.3s;
+  .container {
+    padding-left: $responsive-padding;
+    padding-right: $responsive-padding;
   }
   #index-showcase {
     flex-direction: column;

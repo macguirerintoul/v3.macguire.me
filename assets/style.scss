@@ -6,27 +6,12 @@
 @import './_hover.scss';
 @import './_animate.scss';
 @import './_type.scss';
+@import './_elements.scss';
 
 // Pages
 @import './_about.scss';
 
 // Responsive styles are imported at the bottom
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin-top: 10rem;
-  background-color: rgb(252, 253, 254);
-  font-family: $font-stack;
-}
-
-footer {
-  background-color: $color-dark;
-  color: $color-light;
-  padding-top: 2rem;
-}
 
 .button--primary {
   color: $color-light;
