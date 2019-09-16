@@ -1,3 +1,4 @@
+// Other
 @import './_variables.scss';
 @import './_normalize.scss';
 @import './_nav.scss';
@@ -5,6 +6,10 @@
 @import './_hover.scss';
 @import './_animate.scss';
 @import './_type.scss';
+
+// Pages
+@import './_about.scss';
+
 // Responsive styles are imported at the bottom
 
 * {
@@ -100,7 +105,9 @@ video {
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .resume__context,
+  ul {
     max-width: 50rem;
   }
   p,
@@ -113,7 +120,9 @@ video {
   .video-embed,
   .showcase,
   img,
-  .project-context {
+  .project-context,
+  .resume__context,
+  ul {
     margin-left: auto;
     margin-right: auto;
   }
