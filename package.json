@@ -13,7 +13,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^2.6.0",
+    "@nuxtjs/pwa": "^3.3.5",
     "@sanity/client": "^0.141.6",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
