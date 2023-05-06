@@ -16,7 +16,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "@sanity/client": "^0.141.6",
     "moment": "^2.24.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.16.3",
     "nuxt-sanity": "0.0.4"
   },
   "devDependencies": {
